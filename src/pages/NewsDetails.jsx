@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useContext, useState } from "react";
+=======
+import { useContext } from "react";
+>>>>>>> 1c47f867d3b08d54042e877295002352f014f0a5
 import { useParams } from "react-router-dom";
 import Layout from "../components/Layout";
 import Container from "react-bootstrap/Container";
@@ -14,11 +18,16 @@ import { addToFavorites } from "../store/Favorites/actions";
 import { FavoritesContext } from "../store/Favorites/context";
 
 function NewsDetails() {
+<<<<<<< HEAD
   const [alert, setAlert] = useState(false);
   const [isInList, setIsInList] = useState(false);
 
   // Extragem functia care modifica state-ul global.
   const {favoritesState, favoritesDispatch } = useContext(FavoritesContext);
+=======
+  // Extragem functia care modifica state-ul global.
+  const { favoritesDispatch } = useContext(FavoritesContext);
+>>>>>>> 1c47f867d3b08d54042e877295002352f014f0a5
   // Extragem parametrul venit din URL.
   let { newsId } = useParams();
   // Vrem ca id-ul extras din URL sa contina /-urile, asa ca il decodam.
@@ -37,15 +46,19 @@ function NewsDetails() {
   const formattedDate = getFormattedDate(date);
 
   function handleAddToFavorites(product) {
+<<<<<<< HEAD
     const isInList = favoritesState.products.find((product) => {
       return product.id === newsId;
     });
     setIsInList(isInList);
+=======
+>>>>>>> 1c47f867d3b08d54042e877295002352f014f0a5
     // Apelam actiunea de adaugare la favorite.
     const actionResult = addToFavorites(product);
     // Trimitem rezultatul actiunii catre reducer.
     favoritesDispatch(actionResult);
   }
+<<<<<<< HEAD
   
   function handleAddToFavoriteAlert() {
     setAlert(true);
@@ -53,6 +66,8 @@ function NewsDetails() {
       setAlert(false);
     }, 3000);
   }
+=======
+>>>>>>> 1c47f867d3b08d54042e877295002352f014f0a5
 
   return (
     <Layout>
@@ -82,7 +97,10 @@ function NewsDetails() {
                     description,
                     hasCloseButton: true,
                   });
+<<<<<<< HEAD
                   handleAddToFavoriteAlert();
+=======
+>>>>>>> 1c47f867d3b08d54042e877295002352f014f0a5
                 }}
               >
                 Adaugă la favorite
@@ -94,6 +112,7 @@ function NewsDetails() {
           </Col>
         </Row>
       </Container>
+<<<<<<< HEAD
       {isInList ? (
         <div
           className={alert ? `${styles.show}` : `${styles.hide}`}
@@ -111,6 +130,8 @@ function NewsDetails() {
           </div>
         </div>
       )}
+=======
+>>>>>>> 1c47f867d3b08d54042e877295002352f014f0a5
     </Layout>
   );
 }

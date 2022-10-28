@@ -18,7 +18,10 @@ export function favoritesReducer(state, action) {
         const newState = {
           products: [action.payload, ...state.products],
         };
+<<<<<<< HEAD
         localStorage.setItem("displayFavoritesNews", JSON.stringify(newState));
+=======
+>>>>>>> 1c47f867d3b08d54042e877295002352f014f0a5
         return newState;
       }
     }
@@ -30,7 +33,10 @@ export function favoritesReducer(state, action) {
       const newState = {
         products: filteredProducts,
       };
+<<<<<<< HEAD
       localStorage.setItem("displayFavoritesNews", JSON.stringify(newState));
+=======
+>>>>>>> 1c47f867d3b08d54042e877295002352f014f0a5
       return newState;
     }
     // Nu uitam sa returnam state-ul pe cazul default.
